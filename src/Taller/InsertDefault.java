@@ -6,7 +6,7 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
-public class InsertOne {
+public class InsertDefault {
     
     public static void main(String[] args) {        
         MongoClient mongoClient = MongoDB.getClient();
