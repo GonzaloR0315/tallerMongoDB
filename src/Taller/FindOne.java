@@ -14,8 +14,8 @@ public class FindOne {
 	
 	public static void main(String[] args) {	
 		MongoClient mongoClient = MongoDB.getClient();
-        MongoDatabase database = mongoClient.getDatabase("sample_mflix");
-        MongoCollection<Document> collection = database.getCollection("movies");
+        MongoDatabase database = mongoClient.getDatabase("Taller");
+        MongoCollection<Document> collection = database.getCollection("Taller");
         Bson projectionFields = Projections.fields(
                 Projections.include("title", "imdb"),
                 Projections.excludeId());

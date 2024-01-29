@@ -28,7 +28,7 @@ public class MongoDBHandler {
     public static void main(String[] args) {
         // Ejemplo de uso
         MongoDBHandler mongoDBHandler = new MongoDBHandler("mongodb+srv://gonzalorubio:Moral0315@cluster0.w4wdn0h.mongodb.net/", "Taller");
-        mongoDBHandler.createCollection("miColeccion");
+        mongoDBHandler.createCollection("Taller");
         mongoDBHandler.closeConnection();
     }
 }

@@ -23,7 +23,7 @@ public class QuickStart {
 	public static void main(String[] args) {		
 		MongoClient mongoClient = MongoDB.getClient();
 		MongoDatabase database = mongoClient.getDatabase("Taller");
-        MongoCollection<Document> collection = database.getCollection("movies");
+        MongoCollection<Document> collection = database.getCollection("Taller");
         Document doc = collection.find(eq("title", "Back to the Future")).first();
         if (doc != null) {
             System.out.println(doc.toJson());

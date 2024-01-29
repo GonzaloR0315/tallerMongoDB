@@ -13,10 +13,10 @@ public class Distinct {
 	
 	public static void main(String[] args) {
 		MongoClient mongoClient = MongoDB.getClient();
-        MongoDatabase database = mongoClient.getDatabase("sample_mflix");
-        MongoCollection<Document> collection = database.getCollection("movies");
+        MongoDatabase database = mongoClient.getDatabase("Taller");
+        MongoCollection<Document> collection = database.getCollection("Taller");
         try {
-            DistinctIterable<Integer> docs = collection.distinct("year", Filters.eq("directors", "Carl Franklin"), Integer.class);
+            DistinctIterable<Integer> docs = collection.distinct("Reparacion", Filters.eq("Trabajador", "Daniel"), Integer.class);
             MongoCursor<Integer> results = docs.iterator();
             while(results.hasNext()) {
                 System.out.println(results.next());
