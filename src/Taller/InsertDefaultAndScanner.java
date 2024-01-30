@@ -8,7 +8,7 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
-public class InsertScanner {
+public class InsertDefaultAndScanner {
     
     public static void main(String[] args) {        
         MongoClient mongoClient = MongoDB.getClient();
@@ -16,11 +16,13 @@ public class InsertScanner {
         MongoCollection<Document> collection = database.getCollection("Taller");
         
         // Crear un nuevo documento con valores predeterminados
-        Document nuevoDocumento = new Document();
+        Document nuevoDocumento = new Document("Reparacion", "Antena")
+                .append("Trabajador", "Daniel")
+                .append("year", 2024);
         
         // Solicitar al usuario que ingrese los valores adicionales
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese un campo o escriba 'fin' para terminar: ");
+        System.out.print("Ingrese un valor adicional para el campo (o escriba 'fin' para terminar): ");
         String campo = scanner.nextLine();
         
         // Leer valores adicionales del usuario hasta que ingrese "fin"
@@ -28,7 +30,7 @@ public class InsertScanner {
             System.out.print("Ingrese el valor para " + campo + ": ");
             String valor = scanner.nextLine();
             nuevoDocumento.append(campo, valor);
-            System.out.print("Ingrese un valor adicional para el campo o escriba 'fin' para terminar: ");
+            System.out.print("Ingrese un valor adicional para el campo (o escriba 'fin' para terminar): ");
             campo = scanner.nextLine();
         }
         

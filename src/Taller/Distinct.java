@@ -16,7 +16,7 @@ public class Distinct {
         MongoDatabase database = mongoClient.getDatabase("Taller");
         MongoCollection<Document> collection = database.getCollection("Taller");
         try {
-            DistinctIterable<Integer> docs = collection.distinct("Reparacion", Filters.eq("Trabajador", "Daniel"), Integer.class);
+            DistinctIterable<Integer> docs = collection.distinct("Taller", Filters.eq("Trabajador", "Daniel"), Integer.class);
             MongoCursor<Integer> results = docs.iterator();
             while(results.hasNext()) {
                 System.out.println(results.next());

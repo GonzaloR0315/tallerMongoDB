@@ -17,11 +17,11 @@ public class FindOne {
         MongoDatabase database = mongoClient.getDatabase("Taller");
         MongoCollection<Document> collection = database.getCollection("Taller");
         Bson projectionFields = Projections.fields(
-                Projections.include("title", "imdb"),
+                Projections.include("Reparacion", "Trabajador" , "year", "Horas"),
                 Projections.excludeId());
-        Document doc = collection.find(eq("title", "The Room"))
+        Document doc = collection.find(eq("Reparacion", "Para golpes delantero"))
                 .projection(projectionFields)
-                .sort(Sorts.descending("imdb.rating"))
+                .sort(Sorts.descending("Trabajador.Jon"))
                 .first();
         if (doc == null) {
             System.out.println("No results found.");
