@@ -19,9 +19,9 @@ public class FindOne {
         Bson projectionFields = Projections.fields(
                 Projections.include("Reparacion", "Trabajador" , "year", "Horas"),
                 Projections.excludeId());
-        Document doc = collection.find(eq("Reparacion", "Para golpes delantero"))
+        Document doc = collection.find(eq("Reparacion", "Cambio de Rueda"))
                 .projection(projectionFields)
-                .sort(Sorts.descending("Trabajador.Jon"))
+                .sort(Sorts.descending("Trabajador.Daniel"))
                 .first();
         if (doc == null) {
             System.out.println("No results found.");
